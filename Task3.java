@@ -4,16 +4,13 @@ class Task3{
     //Complete this method so that it gives the Expected Output
     public static Integer rowRotation( Integer examWeek, String[][] matrix ){
         int row=0;
-        while (examWeek>0) {
+        while (examWeek>1) {
             String[] arr= new String[matrix[0].length];
-            int r=matrix[0].length-1;
-            for(int j=0;j<matrix[0].length;j++){   
-                arr[j]= matrix[r][j];
+            int r=matrix.length-1;
+            for(int i=0;i<matrix[0].length;i++){   
+                arr[i]= matrix[r][i];
             }
             for(int i=matrix.length-1;i>0;i--){
-                if (matrix.length == 0){
-                    break;
-                }
                 for(int j=0;j<matrix[0].length;j++){   
                     matrix[i][j]= matrix[i - 1][j];
                 }
@@ -27,14 +24,16 @@ class Task3{
         for(int i=0;i<matrix.length;i++){
             for(int j=0;j<matrix[0].length;j++){
                 if(matrix[i][j].equals(find)){
-                    row=i;
-                    break;
+                    row=i+1;
                 }
-                
+                System.out.print("| "+matrix[i][j]+"  ");
             }
+            System.out.print("|");
+            System.out.println();
         }
         return row;
     }
+    
     
 
 

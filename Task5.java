@@ -3,11 +3,40 @@ class Task5{
 
     //Complete this method so that it gives the Expected Output
     public static void playGame( Integer[][] arena ){
-
-        //For this task you don't need to create any new 2D array
-        //just print the result inside the function
+        int sum=0;
+        for(int i=0;i<arena.length;i++){
+            for(int j=0;j<arena[0].length;j++){
+                if(arena[i][j]%50==0 && arena[i][j]>0){
+                    if(i-1>=0){
+                        if(arena[i-1][j]==2){
+                            sum+=2;
+                        }
+                    }
+                    if(i+1<arena.length){
+                        if(arena[i+1][j]==2){
+                            sum+=2;
+                        }
+                    }
+                    if(j-1>=0){
+                        if(arena[i][j-1]==2){
+                            sum+=2;
+                        }
+                    }
+                    if(j+1<arena[0].length){
+                        if(arena[i][j+1]==2){
+                            sum+=2;
+                        }
+                    }
+                }
+            }
+        }
+        if(sum<10){
+            System.out.println("Points Gained: "+sum+". Your team is out.");
+        }
+        else{
+            System.out.println("Points Gained: "+sum+". Your team has survived the game.");
+        }
         
-        //TO DO
     }
 
     //DO NOT CHANGE ANY DRIVER CODE BELOW THIS LINE

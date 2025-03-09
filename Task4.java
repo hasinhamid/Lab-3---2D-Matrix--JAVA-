@@ -3,13 +3,30 @@ class Task4{
 
     //Complete this method so that it gives the Expected Output
     public static Integer[][] compressMatrix( Integer[][] matrix ){
-
-        //For this task you'll need to create new 2D array
-        
-        //TO DO
-
-        //remove the line below and return the newly created Compressed 2D matrix
-        return null;
+        Integer[][] arr=new Integer[2][2];
+        arr[0][0]=0;
+        arr[0][1]=0;        
+        arr[1][0]=0;
+        arr[1][1]=0;
+        int row=matrix.length;
+        int column=matrix[0].length;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<column;j++){
+                if(i<row/2 && j<column/2){
+                    arr[0][0]+=matrix[i][j];
+                }
+                else if(i<row/2 && j<column){
+                    arr[0][1]+=matrix[i][j];
+                }
+                else if(i<row && j<column/2){
+                    arr[1][0]+=matrix[i][j];
+                }
+                else if(i<row && j<column){
+                    arr[1][1]+=matrix[i][j];
+                }
+            }
+        }
+        return arr;
     }
 
     //DO NOT CHANGE ANY DRIVER CODE BELOW THIS LINE
